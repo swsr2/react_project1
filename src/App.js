@@ -20,8 +20,8 @@ function App() {
   const [userSelect, setUserSelect] = useState(null)
   const [comSelect, setComSelect] = useState(null)
   const [result, setResult] = useState("")
+
   const play = (userChoice) => {
-    // console.log("선택됨", userChoice)
     setUserSelect(choice[userChoice])
     let comChoice = randomChoice()
     setComSelect(comChoice)
@@ -29,14 +29,12 @@ function App() {
   }
 
   const randomChoice = () => {
-    let itemArray = Object.keys(choice) // 객체의 키값만 배열로로
-    let randomIndex = Math.floor(Math.random() * itemArray.length) // 랜덤한 인덱스 추출출
-    let final = itemArray[randomIndex] // 배열 인덱스값 선택
-    return choice[final] // 최종 선택값 객체에서 선택 
+    let itemArray = Object.keys(choice)
+    let randomIndex = Math.floor(Math.random() * itemArray.length)
+    let final = itemArray[randomIndex]
+    return choice[final]
   }
   const judgement = (user, computer) => {
-    console.log(user, computer)
-
     if (user.name === computer.name)
       return "Tie"
     else if (user.name === "Rock")
@@ -49,10 +47,12 @@ function App() {
 
   return (
     <div>
+      <h1 className="game-title">Rock! Scissors! Paper!</h1>
       <div className='main'>
         <Box title="YOU" item={userSelect} result={result} />
         <Box title="Computer" item={comSelect} result={result} />
       </div>
+      {userSelect === null && <div className='explain'>아래 중 하나를 선택하세요</div>}
       <div className='main'>
         <button onClick={() => play("scissors")}>가위</button>
         <button onClick={() => play("rock")}>바위</button>

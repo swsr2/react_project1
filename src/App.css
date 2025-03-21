@@ -98,3 +98,16 @@ button:active {
     width: 100%;
   }
 }
+
+.explain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:red;
+}
+.game-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
