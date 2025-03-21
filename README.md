@@ -54,7 +54,7 @@ Launches the test runner
 
 ## 📦 Deployment
 `CI=false npm run build` 명령을 사용하여 Netlify에서 정상적으로 빌드되도록 설정
-👉 배포 주소: [https://your-netlify-link.netlify.app](https://your-netlify-link.netlify.app)
+👉 배포 주소: [[https://your-netlify-link.netlify.app](https://your-netlify-link.netlify.app)](https://react-rsp-game.netlify.app/)
 
 
 
