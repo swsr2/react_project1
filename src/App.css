@@ -1,113 +1,123 @@
-/* Layout */
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  gap: 20px;
+body {
+  background-color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.item-img {
-  width: 400px;
-  height: 300px;
-  object-fit: contain; /* Ensures the entire image is visible */
-  display: block; /* Ensures consistent alignment */
-  margin: 0 auto; /* Centers the image within its container */
+.container {
+  margin-top: 30px;
+  max-width: 960px;
 }
 
+.game-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-/* Box styling */
 .box {
-  border: 2px solid black;
-  width: 400px;
-  padding: 10px;
+  border-width: 5px;
+  border-style: solid;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.box .card-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.emoji-display {
+  font-size: 10rem;
+  margin: 20px 0;
+  line-height: 1;
 }
 
 .Win {
-  border: 5px solid blue;
-  color: blue;
-  background-color: #e3f2fd; /* Light blue background for winning */
+  border-color: #28a745;
+  background-color: #d4edda;
 }
 
 .Lose {
-  border: 5px solid red;
-  color: red;
-  background-color: #ffebee; /* Light red background for losing */
+  border-color: #dc3545;
+  background-color: #f8d7da;
 }
 
 .Tie {
-  border: 5px solid gray;
-  color: black;
-  background-color: #f5f5f5; /* Light gray background for ties */
+  border-color: #ffc107;
+  background-color: #fff3cd;
 }
-/* Default styles for result text */
+
 .result-text {
-  font-size: 1.5rem; /* Standard size for Lose and Tie */
+  font-size: 3rem;
   font-weight: bold;
-  transition: font-size 0.3s ease; /* Smooth animation for size changes */
+  min-height: 60px; /* Ensure space for the result text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Enlarged text for Win */
 .Win .result-text {
-  font-size: 2rem; /* Larger font size only for "Win" */
-  color: blue; /* Ensures it stands out */
+  color: #28a745;
 }
 
-
-/* Buttons */
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+.Lose .result-text {
+  color: #dc3545;
 }
 
-button:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.Tie .result-text {
+  color: #ffc107;
 }
 
-button:active {
-  background-color: #e0e0e0;
-  transform: translateY(1px);
-  box-shadow: none;
+.explain {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #6c757d; /* Muted gray for explanation */
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .main {
-    flex-direction: column;
-    gap: 10px;
+  .game-title {
+    font-size: 2.5rem;
   }
-
-  .box {
-    width: 90%;
+  .box .card-title {
+    font-size: 2rem;
   }
-
-  button {
-    width: 100%;
+  .emoji-display {
+    font-size: 8rem;
+  }
+  .result-text {
+    font-size: 2.5rem;
+  }
+  .explain {
+    font-size: 1.2rem;
   }
 }
 
-.explain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:red;
-}
-.game-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
+@media (max-width: 576px) {
+  .game-title {
+    font-size: 2rem;
+  }
+  .box .card-title {
+    font-size: 1.8rem;
+  }
+  .emoji-display {
+    font-size: 6rem;
+  }
+  .result-text {
+    font-size: 2rem;
+  }
+  .explain {
+    font-size: 1rem;
+  }
 }

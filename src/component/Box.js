@@ -1,22 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const Box = (props) => {
-    // console.log("data", props)
-    let result;
-    // computer 일때 user와 결과값 반대로 
-    if (props.title === "Computer" && props.result !== "Tie" && props.result !== "") {
-        result = props.result === "Win" ? "Lose" : "Win"
-    } else {
-        result = props.result;
-    }
-    return (
-        <div className={`box ${result}`}>
-            <h1>{props.title}</h1>
-            <h2>{props.item?.name || "Waiting..."}</h2>
-            <img className='item-img' src={props.item && props.item.img} alt=''></img>
-            <span className="result-text">{result}</span>
-        </div>
-    )
+  let result;
+  if (props.title === "Computer" && props.result !== "Tie" && props.result !== "") {
+    result = props.result === "Win" ? "Lose" : "Win";
+  } else {
+    result = props.result;
+  }
+
+  return (
+    <Card className={`box ${result}`}>
+      <div className="emoji-display">
+        {props.item?.emoji || "❓"}
+      </div>
+      <Card.Body>
+        <Card.Title>{props.title}</Card.Title>
+        <Card.Text className="result-text">{result}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
 }
 
-export default Box
+export default Box;
