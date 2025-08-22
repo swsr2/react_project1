@@ -1,7 +1,8 @@
 # 🚀 가위바위보 게임 (React)
 
 React를 사용하여 만든 간단한 가위바위보 게임입니다. 이 프로젝트는 컴포넌트 기반 아키텍처, 상태 관리 및 이벤트 처리와 같은 기본적인 React 개념을 보여줍니다.
-배포 : https://react-rsp-game.netlify.app
+
+🔗 배포링크 : https://react-rsp-game.netlify.app
 
 ## 🌟 주요 기능
 
